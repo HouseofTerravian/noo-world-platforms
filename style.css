@@ -539,6 +539,14 @@ nav {
   font-weight: 600;
 }
 
+/* ─── SECTION EMPTY STATE ──────────────────────────────────── */
+.section-empty {
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  letter-spacing: 0.05em;
+  padding: 2rem 0 4rem;
+}
+
 /* ─── COMING SOON TILE ─────────────────────────────────────── */
 .tile--cs {
   opacity: 0.4;
