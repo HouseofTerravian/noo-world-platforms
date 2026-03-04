@@ -517,6 +517,12 @@ nav {
   line-height: 1.9;
   letter-spacing: 0.01em;
 }
+.footer-legal {
+  font-size: 0.6875rem;
+  color: var(--text-subtle);
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
 .footer-statement .g {
   background: var(--grad-noo);
   -webkit-background-clip: text;
