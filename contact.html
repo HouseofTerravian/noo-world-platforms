@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Noo World Platforms&trade;</title>
+  <meta name="description" content="Reach the Customer Operations team at MCM Enterprises LLC — the operational contact point for all Noo World platforms.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ─── CONTACT PAGE STYLES ─────────────────────────────────── */
+
+    .contact-hero {
+      text-align: center;
+      padding: 5.5rem 0 3.5rem;
+      max-width: 42rem;
+      margin: 0 auto;
+      animation: fadeUp 0.9s ease-out both;
+    }
+
+    .contact-entity {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .contact-entity-role {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+    }
+    .contact-entity-name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      background: var(--grad-noo);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ─── FORM WRAPPER ────────────────────────────────────────── */
+    .contact-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding-bottom: 8rem;
+      animation: fadeUp 0.9s 0.15s ease-out both;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .field label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1rem;
+      transition: border-color var(--ease), background var(--ease);
+      outline: none;
+      width: 100%;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--text-subtle);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--border-hover);
+      background: var(--card-hover);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 160px;
+      line-height: 1.65;
+    }
+
+    .field select option {
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.5rem;
+    }
+
+    .form-note {
+      font-size: 0.6875rem;
+      color: var(--text-subtle);
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      flex-shrink: 0;
+      padding: 0.75rem 2rem;
+      background: var(--grad-noo);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.875rem;
+      letter-spacing: 0.04em;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity var(--ease);
+      font-family: inherit;
+    }
+    .submit-btn:hover { opacity: 0.82; }
+    .submit-btn:disabled { opacity: 0.4; cursor: default; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-submit { flex-direction: column; align-items: flex-start; }
+      .contact-hero { padding: 3.5rem 0 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient"></div>
+
+  <div class="wrap">
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-logo"><span>Noo World Platforms&trade;</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Platforms</a></li>
+        <li><a href="noosphere.html">Noosphere</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          <span class="d">&#9675; Light</span>
+          <span class="l">&#9679; Dark</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="contact-hero">
+      <p class="hero-eyebrow">Noo World Platforms&trade; &nbsp;·&nbsp; Get in Touch</p>
+      <h1 class="hero-title">Contact</h1>
+      <p class="hero-desc">
+        Have a question about a platform, a partnership inquiry, or need
+        general support? Reach our team below.
+      </p>
+      <div class="contact-entity">
+        <span class="contact-entity-role">Customer Operations</span>
+        <span class="contact-entity-name">MCM Enterprises LLC</span>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-wrap">
+
+      <!--
+        SETUP: Create a free account at formspree.io, create a form,
+        and replace "YOUR_FORM_ID" in the action URL below with your
+        actual form ID. Set the form's destination email to:
+        admin@mcmenterprisesllc.com
+      -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              autocomplete="name"
+            >
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            >
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Platform Support">Platform Support</option>
+            <option value="Partnership / Licensing">Partnership / Licensing</option>
+            <option value="Press / Media">Press / Media</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us how we can help..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-submit">
+          <p class="form-note">
+            We respond to all inquiries within 2&ndash;3 business days.<br>
+            No solicitations or unsolicited pitches, please.
+          </p>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p class="footer-copy">&copy; 2025 MCM Enterprises LLC. All rights reserved.</p>
+      <p class="footer-legal">
+        <span class="g">Noo World&trade;</span>, <span class="g">Noo World Platforms&trade;</span>, and <span class="g-blue">Noo World OS&trade;</span> are trademarks or common-law marks of Mirrorlight IP Holdings LLC.
+      </p>
+      <p class="footer-legal">
+        This platform is built by Terravian Systems LLC and operated by MCM Enterprises LLC under license.
+      </p>
+      <p class="footer-legal">
+        Individual platforms within the Noo World ecosystem may be operated by affiliated entities or licensed partners.
+      </p>
+      <p class="footer-legal">
+        House of Terravian represents the creative ecosystem of brands and platforms within the Noo World network.
+      </p>
+    </footer>
+
+  </div><!-- /wrap -->
+
+  <script src="script.js"></script>
+</body>
+</html>
