@@ -324,36 +324,30 @@
           },
           {
             id: 'mcm-enterprises',
+            status: 'coming-soon',
             name: 'MCM Enterprises',
-            tagline: 'The Business Behind the Vision.',
-            category: 'Business · Holdings',
+            tagline: 'The Marketing & Contact Layer for the Noo World.',
+            category: 'Business · Marketing',
             icon: '🏛️',
             accent: 'linear-gradient(to right, #1e3a5f, #eab308)',
-            domains: [{ label: 'MCMEnterprisesllc.com', href: 'https://mcmenterprisesllc.com' }],
-            manifesto: `Every empire needs an operating layer. MCM Enterprises is the business entity behind the House of Terravian — the legal, financial, and operational foundation that makes the vision viable.\n\nMore than an LLC. It is the institutional expression of a long-term commitment to building things that matter, structured to protect, grow, and sustain every platform under its umbrella.`,
-            collectors: { name: 'MCM Enterprises — Founding Entity Edition', href: '#' },
           },
           {
             id: 'house-of-terravian',
+            status: 'coming-soon',
             name: 'House of Terravian',
             tagline: 'The House That Builds Worlds.',
             category: 'Legacy · Brand House',
             icon: '⚜️',
             accent: 'linear-gradient(to right, #7f1d1d, #eab308)',
-            domains: [{ label: 'HouseofTerravian.casa', href: 'https://houseofterravian.casa' }],
-            manifesto: `The House of Terravian is not a company. It is a dynasty in motion — a creative and entrepreneurial force built to outlast any single product, platform, or era.\n\nEvery brand in the Noo World traces back here. Every platform is an expression of this house's values: sovereignty, intention, and the relentless pursuit of building something that will still mean something when the builders are gone.`,
-            collectors: { name: 'House of Terravian — Dynasty Genesis Edition', href: '#' },
           },
           {
             id: 'toravian-dynasty-trust',
+            status: 'coming-soon',
             name: 'Toravian Dynasty Trust',
             tagline: 'Wealth. Legacy. Continuity.',
             category: 'Trust · Legacy',
             icon: '📜',
             accent: 'linear-gradient(to right, #1e293b, #eab308)',
-            domains: [{ label: 'ToravianDynastyTrust.com', href: 'https://toraviandynastytrust.com' }],
-            manifesto: `Wealth built without structure is wealth built to vanish. The Toravian Dynasty Trust exists to ensure that everything created under the House of Terravian endures — protected, preserved, and passed forward with intention.\n\nThis is the legal and generational vessel of the dynasty. Not just an asset structure, but a declaration: that what is built here is meant to last beyond a lifetime.`,
-            collectors: { name: 'Toravian Dynasty Trust — Legacy Seal Edition', href: '#' },
           },
         ],
       },
@@ -363,17 +357,24 @@
     const sectionsEl = document.getElementById('sections');
 
     SECTIONS.forEach(section => {
-      const count = section.items.length;
+      const live = section.items.filter(i => i.status !== 'coming-soon').length;
+      const cs   = section.items.filter(i => i.status === 'coming-soon').length;
+      const total = section.items.length;
+      const metaText = total === 0
+        ? 'Coming soon'
+        : cs > 0
+          ? `${live} live · ${cs} coming soon`
+          : `${live} brand${live !== 1 ? 's' : ''}`;
 
       const bar = document.createElement('div');
       bar.className = 'section-bar';
       bar.innerHTML = `
         <span class="section-label">${section.label}</span>
-        <span class="section-meta">${count > 0 ? `${count} brand${count !== 1 ? 's' : ''}` : 'Coming soon'}</span>
+        <span class="section-meta">${metaText}</span>
       `;
       sectionsEl.appendChild(bar);
 
-      if (count === 0) {
+      if (total === 0) {
         const empty = document.createElement('p');
         empty.className = 'section-empty';
         empty.textContent = 'Platforms coming soon.';
@@ -385,12 +386,15 @@
       grid.className = 'grid';
 
       section.items.forEach(p => {
+        const isCS = p.status === 'coming-soon';
         const tile = document.createElement('div');
-        tile.className = 'tile';
+        tile.className = 'tile' + (isCS ? ' tile--cs' : '');
         tile.style.setProperty('--tile-accent', p.accent);
-        tile.setAttribute('tabindex', '0');
-        tile.setAttribute('role', 'button');
-        tile.setAttribute('aria-label', `Open ${p.name}`);
+        if (!isCS) {
+          tile.setAttribute('tabindex', '0');
+          tile.setAttribute('role', 'button');
+          tile.setAttribute('aria-label', `Open ${p.name}`);
+        }
         tile.innerHTML = `
           <div class="tile-icon">${p.icon}</div>
           <div>
@@ -399,14 +403,18 @@
             <p class="tile-tagline">${p.tagline}</p>
           </div>
           <div class="tile-foot">
-            <span class="tile-domain">${p.domains[0].label}</span>
-            <span class="tile-arrow">&#8594;</span>
+            ${isCS
+              ? `<span class="tile-cs-badge">Coming Soon</span>`
+              : `<span class="tile-domain">${p.domains[0].label}</span><span class="tile-arrow">&#8594;</span>`
+            }
           </div>
         `;
-        tile.addEventListener('click', () => openModal(p));
-        tile.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
-        });
+        if (!isCS) {
+          tile.addEventListener('click', () => openModal(p));
+          tile.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
+          });
+        }
         grid.appendChild(tile);
       });
 
