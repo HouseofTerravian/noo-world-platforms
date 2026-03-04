@@ -539,6 +539,24 @@ nav {
   font-weight: 600;
 }
 
+/* ─── COMING SOON TILE ─────────────────────────────────────── */
+.tile--cs {
+  opacity: 0.4;
+  cursor: default;
+}
+.tile--cs:hover { background: var(--card); }
+.tile--cs::after { display: none; }
+.tile-cs-badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-subtle);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.175rem 0.6rem;
+}
+
 /* ─── ANIMATIONS ───────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }

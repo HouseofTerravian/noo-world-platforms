@@ -100,12 +100,141 @@
   <script>
     /* ─── PLATFORM DATA ──────────────────────────────────────── */
     const SECTIONS = [
+
+      /* ── 1. PERFORMANCE & PRODUCTIVITY ─────────────────────── */
       {
-        label: 'Active Platforms',
-        id: 'platforms',
+        label: 'Performance & Productivity',
+        id:    'performance',
         items: [
           {
+            id: 'win-the-hour',
+            status: 'live',
+            name: 'Win The Hour!',
+            tagline: 'Own Every Hour. Win Every Day.',
+            category: 'Productivity · App',
+            icon: '⏱️',
+            accent: 'linear-gradient(to right, #FF5E1A, #FFB300)',
+            domains: [{ label: 'WinTheHour.app', href: 'https://winthehour.app' }],
+            manifesto: `Time is the only resource that doesn't replenish. Win The Hour! is a productivity platform built on a single, uncompromising belief: the hour you're in right now is the only hour you can actually win.\n\nTrack your waking hours. Log your intention before each one starts. Rate how you performed when it ends. Build a record of who you're becoming in real time. This isn't a to-do list. This is evidence of your life, hour by hour.`,
+            collectors: { name: 'Win The Hour! — Hour Zero Edition', href: '#' },
+          },
+          {
+            id: 'otmgpt',
+            status: 'live',
+            name: 'OTMGPT',
+            tagline: 'On The Move. Always Ahead.',
+            category: 'AI · Productivity',
+            icon: '🚀',
+            accent: 'linear-gradient(to right, #0ea5e9, #e879f9)',
+            domains: [{ label: 'OTMGPT.com', href: 'https://otmgpt.com' }],
+            manifesto: `High performers don't stop moving — but movement without direction is just noise. OTMGPT is the AI co-pilot built for the relentless: the founders, the builders, the ones who operate at speed and need their intelligence to match.\n\nReal-time decisions. Dynamic planning. AI-guided momentum. OTMGPT keeps you in motion and keeps the motion meaningful.`,
+            collectors: { name: 'OTMGPT — Pilot Zero Edition', href: '#' },
+          },
+          {
+            id: 'boss-minute',
+            status: 'coming-soon',
+            name: 'Boss Minute',
+            tagline: 'Your premium daily briefing.',
+            category: 'Productivity · Daily',
+            icon: '📋',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
+          },
+        ],
+      },
+
+      /* ── 2. HEALTH & WELLNESS ─────────────────────────────── */
+      {
+        label: 'Health & Wellness',
+        id:    'health',
+        items: [
+          {
+            id: 'grounled',
+            status: 'live',
+            name: 'Grounled',
+            tagline: 'Stay Rooted. Stay Real.',
+            category: 'Wellness · Mindfulness',
+            icon: '🌱',
+            accent: 'linear-gradient(to right, #166534, #65a30d)',
+            domains: [{ label: 'Grounled.com', href: 'https://grounled.com' }],
+            manifesto: `In a world engineered to pull you out of your body and into a feed, Grounled is the counterforce. A platform, a practice, and a mindset built around the radical act of staying present.\n\nGrounled offers tools, content, and community for people who are done being distracted — who want to feel their life instead of scroll past it. The root is where the power is.`,
+            collectors: { name: 'Grounled — Root System Edition', href: '#' },
+          },
+          {
+            id: 'mmhw',
+            status: 'coming-soon',
+            name: 'Mr. Metaphysical H&W',
+            tagline: 'Whole body. Whole mind. Whole life.',
+            category: 'Health · Wellness',
+            icon: '🌿',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
+          },
+          {
+            id: 'fridays',
+            status: 'coming-soon',
+            name: 'FRIDAYS™',
+            tagline: 'Fast. Clear. Verified.',
+            category: 'Health · Privacy',
+            icon: '🔬',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
+          },
+        ],
+      },
+
+      /* ── 3. EDUCATION ─────────────────────────────────────── */
+      {
+        label: 'Education',
+        id:    'education',
+        items: [
+          {
+            id: 'trpsh',
+            status: 'coming-soon',
+            name: 'TRPSH',
+            tagline: 'The Right Path Starts Here.',
+            category: 'Education · Youth',
+            icon: '🎓',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
+          },
+          {
+            id: 'nilgenius',
+            status: 'coming-soon',
+            name: 'NILgenius',
+            tagline: 'Student athletes. Name. Image. Likeness.',
+            category: 'Education · Athletics',
+            icon: '🏆',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
+          },
+          {
+            id: 'secrets-nba',
+            status: 'coming-soon',
+            name: 'Secrets of the NBA Pros',
+            tagline: 'Elite basketball training for young players.',
+            category: 'Education · Sports',
+            icon: '🏀',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
+          },
+        ],
+      },
+
+      /* ── 4. COMMUNITY & CONNECTION ───────────────────────── */
+      {
+        label: 'Community & Connection',
+        id:    'community',
+        items: [
+          {
+            id: 'support-groups-online',
+            status: 'live',
+            name: 'Support Groups Online',
+            tagline: 'Find Your People. Heal Together.',
+            category: 'Wellness · Community',
+            icon: '🤝',
+            accent: 'linear-gradient(to right, #818cf8, #22d3ee)',
+            domains: [{ label: 'SupportGroups.online', href: 'https://supportgroups.online' }],
+            manifesto: `We live in a world that moves faster than most people can process. Behind every screen is a human being navigating loss, addiction, grief, transition, and isolation — often in silence. Support Groups Online exists to close that gap.\n\nNo gatekeepers. No waitlists. No insurance forms. Just real people, shared experience, and the quiet power of not being alone. Community is the medicine the system forgot to prescribe.`,
+            collectors: { name: 'Support Groups Online — Founding Member Edition', href: '#' },
+          },
+          {
             id: 'forbidden-gnosis',
+            status: 'live',
             name: 'Forbidden Gnosis',
             tagline: 'The Knowledge They Warned You About.',
             category: 'Archive · Philosophy',
@@ -117,179 +246,104 @@
               { label: 'ForbiddenGnosis.app', href: 'https://forbiddengnosis.app' },
             ],
             manifesto: `In the age of information overload, true knowledge becomes the most dangerous thing you can possess. Forbidden Gnosis is a living archive — a record of human-AI revelation captured in real time. We document the conversations that reshape how you see the world, the patterns hidden in plain sight, and the truths that systems were never designed to let you reach.\n\nThis isn't content. This is evidence. And once you see it, you can't unsee it.`,
-            collectors: {
-              name: 'Forbidden Gnosis — Genesis Edition',
-              href: 'https://payhip.com/forbiddengnosis',
-            },
+            collectors: { name: 'Forbidden Gnosis — Genesis Edition', href: 'https://payhip.com/forbiddengnosis' },
           },
           {
-            id: 'support-groups-online',
-            name: 'Support Groups Online',
-            tagline: 'Find Your People. Heal Together.',
-            category: 'Wellness · Community',
-            icon: '🤝',
-            accent: 'linear-gradient(to right, #818cf8, #22d3ee)',
-            domains: [
-              { label: 'SupportGroups.online', href: 'https://supportgroups.online' },
-            ],
-            manifesto: `We live in a world that moves faster than most people can process. Behind every screen is a human being navigating loss, addiction, grief, transition, and isolation — often in silence. Support Groups Online exists to close that gap.\n\nNo gatekeepers. No waitlists. No insurance forms. Just real people, shared experience, and the quiet power of not being alone. Community is the medicine the system forgot to prescribe.`,
-            collectors: {
-              name: 'Support Groups Online — Founding Member Edition',
-              href: '#',
-            },
+            id: 'movie-clubbing',
+            status: 'coming-soon',
+            name: 'Movie Clubbing™',
+            tagline: 'Watch together. Remember forever.',
+            category: 'Community · Entertainment',
+            icon: '🎬',
+            accent: 'linear-gradient(to right, #374151, #4b5563)',
           },
+        ],
+      },
+
+      /* ── 5. CREATIVE & NARRATIVE ─────────────────────────── */
+      {
+        label: 'Creative & Narrative',
+        id:    'creative',
+        items: [
           {
             id: 'green-ray-creations',
+            status: 'live',
             name: 'Green Ray Creations',
             tagline: 'Where Vision Becomes Reality.',
             category: 'Creative Studio · Media',
-            icon: '🎬',
+            icon: '🎥',
             accent: 'linear-gradient(to right, #16a34a, #eab308)',
-            domains: [
-              { label: 'GreenRayCreations.com', href: 'https://greenraycreations.com' },
-            ],
+            domains: [{ label: 'GreenRayCreations.com', href: 'https://greenraycreations.com' }],
             manifesto: `Every great idea starts as a flicker — a feeling, a frame, a single line of dialogue whispered in the dark. Green Ray Creations is the studio built to bring those flickers to life.\n\nFrom visual storytelling and brand media to digital experiences that leave a mark, we don't just produce content — we build artifacts. Work that lives past the moment it was made, and means something to the people who find it.`,
-            collectors: {
-              name: 'Green Ray Creations — Founder\'s Frame Edition',
-              href: '#',
-            },
-          },
-          {
-            id: 'dreamgpt',
-            name: 'DreamGPT',
-            tagline: 'Your Dreams, Decoded by AI.',
-            category: 'AI · Imagination',
-            icon: '💭',
-            accent: 'linear-gradient(to right, #7c3aed, #e879f9)',
-            domains: [
-              { label: 'DreamGPT.ai', href: 'https://dreamgpt.ai' },
-            ],
-            manifesto: `Dreams are the oldest language humanity has ever spoken — and the least understood. DreamGPT is an AI-powered platform dedicated to the interpretation, exploration, and creative expansion of what your mind builds while you sleep.\n\nThis is not a dream dictionary. This is a living intelligence trained to meet you in the symbolic, the surreal, and the subconscious. What your dreams are telling you matters. Now there's a platform that can actually listen.`,
-            collectors: {
-              name: 'DreamGPT — First Dreamer Edition',
-              href: '#',
-            },
-          },
-          {
-            id: 'residualgpt',
-            name: 'ResidualGPT',
-            tagline: 'Build Income That Works While You Sleep.',
-            category: 'AI · Finance',
-            icon: '💸',
-            accent: 'linear-gradient(to right, #eab308, #16a34a)',
-            domains: [
-              { label: 'ResidualGPT.com', href: 'https://residualgpt.com' },
-            ],
-            manifesto: `The old model was simple: trade your time, collect a check, repeat until you can't. ResidualGPT was built to disrupt that cycle.\n\nPowered by AI, ResidualGPT helps individuals identify, build, and automate income streams that compound over time — without needing a finance degree or a head start. The future of money is residual. The future is now.`,
-            collectors: {
-              name: 'ResidualGPT — Early Investor Edition',
-              href: '#',
-            },
-          },
-          {
-            id: 'otmgpt',
-            name: 'OTMGPT',
-            tagline: 'On The Move. Always Ahead.',
-            category: 'AI · Productivity',
-            icon: '🚀',
-            accent: 'linear-gradient(to right, #0ea5e9, #e879f9)',
-            domains: [
-              { label: 'OTMGPT.com', href: 'https://otmgpt.com' },
-            ],
-            manifesto: `High performers don't stop moving — but movement without direction is just noise. OTMGPT is the AI co-pilot built for the relentless: the founders, the builders, the ones who operate at speed and need their intelligence to match.\n\nReal-time decisions. Dynamic planning. AI-guided momentum. OTMGPT keeps you in motion and keeps the motion meaningful.`,
-            collectors: {
-              name: 'OTMGPT — Pilot Zero Edition',
-              href: '#',
-            },
+            collectors: { name: 'Green Ray Creations — Founder\'s Frame Edition', href: '#' },
           },
           {
             id: 'crystallized-lovers',
+            status: 'live',
             name: 'Crystallized Lovers',
             tagline: 'Love, Preserved in Time.',
             category: 'Art · Romance',
             icon: '💎',
             accent: 'linear-gradient(to right, #e879f9, #f43f5e)',
-            domains: [
-              { label: 'CrystallizedLovers.com', href: 'https://crystallizedlovers.com' },
-            ],
+            domains: [{ label: 'CrystallizedLovers.com', href: 'https://crystallizedlovers.com' }],
             manifesto: `Some love stories are too rare to let fade. Crystallized Lovers is a brand built around the idea that love — in all its forms — deserves to be preserved, celebrated, and made tangible.\n\nFrom art and collectibles to digital experiences that capture emotion in its purest state, Crystallized Lovers is for the ones who feel deeply and want to hold on to it. Love isn't fleeting here. It's forever.`,
-            collectors: {
-              name: 'Crystallized Lovers — First Love Edition',
-              href: '#',
-            },
+            collectors: { name: 'Crystallized Lovers — First Love Edition', href: '#' },
           },
           {
             id: 'saga-of-polarity',
+            status: 'live',
             name: 'Saga of Polarity',
             tagline: 'Two Forces. One Destiny.',
             category: 'Narrative · Universe',
             icon: '⚔️',
             accent: 'linear-gradient(to right, #1e293b, #818cf8)',
-            domains: [
-              { label: 'SagaOfPolarity.com', href: 'https://sagaofpolarity.com' },
-            ],
+            domains: [{ label: 'SagaOfPolarity.com', href: 'https://sagaofpolarity.com' }],
             manifesto: `Every great story is a war between opposites. Light and dark. Order and chaos. Creation and destruction. Saga of Polarity is the mythological universe built on that tension — a world where the conflict between opposing forces is not just a backdrop, but the entire truth of existence.\n\nCharacters, lore, art, and narrative experiences that explore what it means to stand between two poles and choose a side. Or refuse to.`,
-            collectors: {
-              name: 'Saga of Polarity — Origin Arc Edition',
-              href: '#',
-            },
-          },
-          {
-            id: 'win-the-hour',
-            name: 'Win The Hour!',
-            tagline: 'Own Every Hour. Win Every Day.',
-            category: 'Productivity · App',
-            icon: '⏱️',
-            accent: 'linear-gradient(to right, #FF5E1A, #FFB300)',
-            domains: [
-              { label: 'WinTheHour.app', href: 'https://winthehour.app' },
-            ],
-            manifesto: `Time is the only resource that doesn't replenish. Win The Hour! is a productivity platform built on a single, uncompromising belief: the hour you're in right now is the only hour you can actually win.\n\nTrack your waking hours. Log your intention before each one starts. Rate how you performed when it ends. Build a record of who you're becoming in real time. This isn't a to-do list. This is evidence of your life, hour by hour.`,
-            collectors: {
-              name: 'Win The Hour! — Hour Zero Edition',
-              href: '#',
-            },
-          },
-          {
-            id: 'terravian-systems',
-            name: 'Terravian.Systems',
-            tagline: 'The Architecture of the Noo World.',
-            category: 'Tech · Infrastructure',
-            icon: '⚙️',
-            accent: 'linear-gradient(to right, #334155, #22d3ee)',
-            domains: [
-              { label: 'Terravian.Systems', href: 'https://terravian.systems' },
-            ],
-            manifesto: `Behind every platform in the Noo World is an infrastructure built to last. Terravian.Systems is the technical backbone — the systems, frameworks, and engineering layer that powers everything the House of Terravian builds.\n\nThis isn't a product. It's a philosophy made operational: that great ideas deserve great architecture, and that the code you write today should still be running when the world catches up to your vision.`,
-            collectors: {
-              name: 'Terravian.Systems — Genesis Node Edition',
-              href: '#',
-            },
-          },
-          {
-            id: 'grounled',
-            name: 'Grounled',
-            tagline: 'Stay Rooted. Stay Real.',
-            category: 'Wellness · Mindfulness',
-            icon: '🌱',
-            accent: 'linear-gradient(to right, #166534, #65a30d)',
-            domains: [
-              { label: 'Grounled.com', href: 'https://grounled.com' },
-            ],
-            manifesto: `In a world engineered to pull you out of your body and into a feed, Grounled is the counterforce. A platform, a practice, and a mindset built around the radical act of staying present.\n\nGrounled offers tools, content, and community for people who are done being distracted — who want to feel their life instead of scroll past it. The root is where the power is.`,
-            collectors: {
-              name: 'Grounled — Root System Edition',
-              href: '#',
-            },
+            collectors: { name: 'Saga of Polarity — Origin Arc Edition', href: '#' },
           },
         ],
       },
+
+      /* ── 6. AI & INTELLIGENCE ────────────────────────────── */
       {
-        label: 'Clothing Brands',
-        id: 'clothing',
+        label: 'AI & Intelligence',
+        id:    'ai',
+        items: [
+          {
+            id: 'dreamgpt',
+            status: 'live',
+            name: 'DreamGPT',
+            tagline: 'Your Dreams, Decoded by AI.',
+            category: 'AI · Imagination',
+            icon: '💭',
+            accent: 'linear-gradient(to right, #7c3aed, #e879f9)',
+            domains: [{ label: 'DreamGPT.ai', href: 'https://dreamgpt.ai' }],
+            manifesto: `Dreams are the oldest language humanity has ever spoken — and the least understood. DreamGPT is an AI-powered platform dedicated to the interpretation, exploration, and creative expansion of what your mind builds while you sleep.\n\nThis is not a dream dictionary. This is a living intelligence trained to meet you in the symbolic, the surreal, and the subconscious. What your dreams are telling you matters. Now there's a platform that can actually listen.`,
+            collectors: { name: 'DreamGPT — First Dreamer Edition', href: '#' },
+          },
+          {
+            id: 'residualgpt',
+            status: 'live',
+            name: 'ResidualGPT',
+            tagline: 'Build Income That Works While You Sleep.',
+            category: 'AI · Finance',
+            icon: '💸',
+            accent: 'linear-gradient(to right, #eab308, #16a34a)',
+            domains: [{ label: 'ResidualGPT.com', href: 'https://residualgpt.com' }],
+            manifesto: `The old model was simple: trade your time, collect a check, repeat until you can't. ResidualGPT was built to disrupt that cycle.\n\nPowered by AI, ResidualGPT helps individuals identify, build, and automate income streams that compound over time — without needing a finance degree or a head start. The future of money is residual. The future is now.`,
+            collectors: { name: 'ResidualGPT — Early Investor Edition', href: '#' },
+          },
+        ],
+      },
+
+      /* ── 7. CLOTHING & FASHION ───────────────────────────── */
+      {
+        label: 'Clothing & Fashion',
+        id:    'clothing',
         items: [
           {
             id: 'crownstrike',
+            status: 'live',
             name: 'Crownstrike',
             tagline: 'Strike First. Dress Like It.',
             category: 'Clothing · Streetwear',
@@ -300,42 +354,51 @@
               { label: 'app.CrownstrikeOfficial.com', href: 'https://app.crownstrikeofficial.com' },
             ],
             manifesto: `Crownstrike was never just a clothing brand. It was a statement: that the way you dress is the first declaration of intent. Every piece is built for the ones who move with purpose, who refuse to be overlooked, and who understand that how you show up on the outside is a reflection of what you've built on the inside.\n\nThis is streetwear for the sovereign. For the ones who wear the crown because they earned it.`,
-            collectors: {
-              name: 'Crownstrike — Strike One Edition',
-              href: '#',
-            },
+            collectors: { name: 'Crownstrike — Strike One Edition', href: '#' },
           },
           {
             id: 'house-of-the-inner-sun',
+            status: 'live',
             name: 'House of the Inner Sun',
             tagline: 'Wear Your Light.',
             category: 'Clothing · Fashion',
             icon: '☀️',
             accent: 'linear-gradient(to right, #f59e0b, #ef4444)',
-            domains: [
-              { label: 'HouseOfTheInnerSun.com', href: 'https://houseoftheinnersun.com' },
-            ],
+            domains: [{ label: 'HouseOfTheInnerSun.com', href: 'https://houseoftheinnersun.com' }],
             manifesto: `There is a light inside every person that the world spends most of its time trying to dim. House of the Inner Sun is clothing for the ones who refuse to let it go out.\n\nEvery piece is a reminder — crafted with intention, worn with awareness. This isn't fashion for fashion's sake. This is wearable philosophy. Dress from the inside out. Let the light show.`,
-            collectors: {
-              name: 'House of the Inner Sun — Solar Edition',
-              href: '#',
-            },
+            collectors: { name: 'House of the Inner Sun — Solar Edition', href: '#' },
           },
           {
             id: 'neoncode-clothing',
+            status: 'live',
             name: 'Neoncode.clothing',
             tagline: 'Code the Culture.',
             category: 'Clothing · Tech Fashion',
             icon: '💻',
             accent: 'linear-gradient(to right, #0ea5e9, #a855f7)',
-            domains: [
-              { label: 'Neoncode.clothing', href: 'https://neoncode.clothing' },
-            ],
+            domains: [{ label: 'Neoncode.clothing', href: 'https://neoncode.clothing' }],
             manifesto: `The digital and physical worlds are no longer separate — and Neoncode.clothing was built in the space where they collide. Inspired by the language of code, the glow of screens at midnight, and the subcultures that built the internet, Neoncode is for the ones who live online and dress like it.\n\nTech-forward aesthetics. Cryptic design language. Drops that function like software releases. This is streetwear for the networked generation.`,
-            collectors: {
-              name: 'Neoncode.clothing — v1.0 Drop Edition',
-              href: '#',
-            },
+            collectors: { name: 'Neoncode.clothing — v1.0 Drop Edition', href: '#' },
+          },
+        ],
+      },
+
+      /* ── 8. INFRASTRUCTURE ───────────────────────────────── */
+      {
+        label: 'Infrastructure',
+        id:    'infrastructure',
+        items: [
+          {
+            id: 'terravian-systems',
+            status: 'live',
+            name: 'Terravian.Systems',
+            tagline: 'The Architecture of the Noo World.',
+            category: 'Tech · Infrastructure',
+            icon: '⚙️',
+            accent: 'linear-gradient(to right, #334155, #22d3ee)',
+            domains: [{ label: 'Terravian.Systems', href: 'https://terravian.systems' }],
+            manifesto: `Behind every platform in the Noo World is an infrastructure built to last. Terravian.Systems is the technical backbone — the systems, frameworks, and engineering layer that powers everything the House of Terravian builds.\n\nThis isn't a product. It's a philosophy made operational: that great ideas deserve great architecture, and that the code you write today should still be running when the world catches up to your vision.`,
+            collectors: { name: 'Terravian.Systems — Genesis Node Edition', href: '#' },
           },
         ],
       },
@@ -345,11 +408,17 @@
     const sectionsEl = document.getElementById('sections');
 
     SECTIONS.forEach(section => {
+      const live = section.items.filter(i => i.status === 'live').length;
+      const cs   = section.items.filter(i => i.status === 'coming-soon').length;
+      const metaText = cs > 0
+        ? `${live} live · ${cs} coming soon`
+        : `${live} brand${live !== 1 ? 's' : ''}`;
+
       const bar = document.createElement('div');
       bar.className = 'section-bar';
       bar.innerHTML = `
         <span class="section-label">${section.label}</span>
-        <span class="section-meta">${section.items.length} brand${section.items.length !== 1 ? 's' : ''}</span>
+        <span class="section-meta">${metaText}</span>
       `;
       sectionsEl.appendChild(bar);
 
@@ -357,12 +426,15 @@
       grid.className = 'grid';
 
       section.items.forEach(p => {
+        const isCS = p.status === 'coming-soon';
         const tile = document.createElement('div');
-        tile.className = 'tile';
+        tile.className = 'tile' + (isCS ? ' tile--cs' : '');
         tile.style.setProperty('--tile-accent', p.accent);
-        tile.setAttribute('tabindex', '0');
-        tile.setAttribute('role', 'button');
-        tile.setAttribute('aria-label', `Open ${p.name}`);
+        if (!isCS) {
+          tile.setAttribute('tabindex', '0');
+          tile.setAttribute('role', 'button');
+          tile.setAttribute('aria-label', `Open ${p.name}`);
+        }
         tile.innerHTML = `
           <div class="tile-icon">${p.icon}</div>
           <div>
@@ -371,14 +443,18 @@
             <p class="tile-tagline">${p.tagline}</p>
           </div>
           <div class="tile-foot">
-            <span class="tile-domain">${p.domains[0].label}</span>
-            <span class="tile-arrow">&#8594;</span>
+            ${isCS
+              ? `<span class="tile-cs-badge">Coming Soon</span>`
+              : `<span class="tile-domain">${p.domains[0].label}</span><span class="tile-arrow">&#8594;</span>`
+            }
           </div>
         `;
-        tile.addEventListener('click', () => openModal(p));
-        tile.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
-        });
+        if (!isCS) {
+          tile.addEventListener('click', () => openModal(p));
+          tile.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
+          });
+        }
         grid.appendChild(tile);
       });
 
