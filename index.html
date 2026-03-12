@@ -199,9 +199,12 @@
             tagline: 'Find Your People. Heal Together.',
             category: 'Wellness · Community',
             icon: '🤝',
-            accent: 'linear-gradient(to right, #818cf8, #22d3ee)',
-            domains: [{ label: 'SupportGroups.online', href: 'https://supportgroups.online' }],
-            manifesto: `We live in a world that moves faster than most people can process. Behind every screen is a human being navigating loss, addiction, grief, transition, and isolation — often in silence. Support Groups Online™ exists to close that gap.\n\nNo gatekeepers. No waitlists. No insurance forms. Just real people, shared experience, and the quiet power of not being alone. Community is the medicine the system forgot to prescribe.`,
+            accent: 'linear-gradient(to right, #0d9488, #818cf8)',
+            domains: [
+              { label: 'SupportGroups.online',     href: 'https://supportgroups.online'     },
+              { label: 'app.SupportGroups.online', href: 'https://app.supportgroups.online' },
+            ],
+            manifesto: `We live in a world that moves faster than most people can process. Behind every screen is a human being navigating loss, addiction, grief, transition, and isolation — often in silence. Support Groups Online™ exists to close that gap.\n\nA global marketplace connecting people with independent facilitators — for grief, trauma, addiction recovery, relationships, chronic illness, and more. No gatekeepers. No waitlists. No insurance forms. Just real people, shared experience, and the quiet power of not being alone.\n\nFacilitators earn 50% of every session they host. Community is the medicine the system forgot to prescribe.`,
             collectors: { name: 'Support Groups Online™ — Founding Member Edition', href: '#' },
           },
           {
@@ -424,12 +427,14 @@
           },
           {
             id: 'step-league',
-            status: 'coming-soon',
-            name: 'Step League™',
-            tagline: 'Every Step Counts',
-            category: 'Clothing · Athletic',
+            name: 'StepLeague™',
+            tagline: 'Turn Your Steps Into Competition',
+            category: 'Fitness · Gamification',
             icon: '👟',
-            accent: 'linear-gradient(to right, #0f172a, #22d3ee)',
+            accent: 'linear-gradient(to right, #1d4ed8, #22c55e)',
+            domains: [{ label: 'StepLeague.online', href: 'https://stepleague.online' }],
+            manifesto: `Walking is the most democratic form of exercise on the planet — but nobody told it to be competitive. StepLeague™ turns your daily steps into a global sport.\n\nJoin monthly leagues. Compete on live leaderboards. Stay accountable with a community that moves when you move. $10/month. No gym required. No excuses accepted.\n\nThis is fitness gamified — and once you're in the league, getting off the couch becomes a competitive disadvantage.`,
+            collectors: { name: 'StepLeague™ — Season One Edition', href: '#' },
           },
           {
             id: 'sexy-man-hands',
@@ -474,6 +479,20 @@
         label: 'Infrastructure',
         id:    'infrastructure',
         items: [
+          {
+            id: 'nooworld-identity',
+            name: 'Noo World Identity™',
+            tagline: 'One Login. Every World.',
+            category: 'Identity · SSO',
+            icon: '🔑',
+            accent: 'linear-gradient(to right, #eab308, #e879f9, #ef4444)',
+            domains: [
+              { label: 'id.TheNooWorld.com',    href: 'https://id.thenooworld.com'    },
+              { label: 'login.TheNooWorld.com', href: 'https://login.thenooworld.com' },
+            ],
+            manifesto: `The Noo World is built on a single truth: you should only have to prove who you are once.\n\nNoo World Identity™ is the centralized authentication layer powering every platform in the Noo World ecosystem. One account. One login. Every world — from Win The Hour!™ to StepLeague™ to Support Groups Online™ — recognizes you the moment you arrive.\n\nBuilt on JWT-based SSO architecture, designed to scale across subdomains and eventually across entirely different domains via OAuth 2.0. The foundation that makes the ecosystem possible.`,
+            collectors: { name: 'Noo World Identity™ — First Citizen Edition', href: '#' },
+          },
           {
             id: 'noo-world',
             name: 'Noo World™',
