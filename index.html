@@ -561,14 +561,12 @@
     const sectionsEl = document.getElementById('sections');
 
     SECTIONS.forEach(section => {
-      const live  = section.items.filter(i => i.status !== 'coming-soon').length;
-      const cs    = section.items.filter(i => i.status === 'coming-soon').length;
-      const total = section.items.length;
-      const metaText = total === 0
-        ? 'Coming soon'
-        : cs > 0
-          ? `${live} live · ${cs} coming soon`
-          : `${live} brand${live !== 1 ? 's' : ''}`;
+      const liveItems = section.items.filter(i => i.status !== 'coming-soon');
+      const live = liveItems.length;
+
+      if (live === 0) return;
+
+      const metaText = `${live} brand${live !== 1 ? 's' : ''}`;
 
       const bar = document.createElement('div');
       bar.className = 'section-bar';
@@ -578,19 +576,11 @@
       `;
       sectionsEl.appendChild(bar);
 
-      if (total === 0) {
-        const empty = document.createElement('p');
-        empty.className = 'section-empty';
-        empty.textContent = 'Platforms coming soon.';
-        sectionsEl.appendChild(empty);
-        return;
-      }
-
       const grid = document.createElement('div');
       grid.className = 'grid';
 
-      section.items.forEach(p => {
-        const isCS = p.status === 'coming-soon';
+      liveItems.forEach(p => {
+        const isCS = false;
         const tile = document.createElement('div');
         tile.className = 'tile' + (isCS ? ' tile--cs' : '');
         tile.style.setProperty('--tile-accent', p.accent);
