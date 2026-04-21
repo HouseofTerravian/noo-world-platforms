@@ -580,15 +580,12 @@
       grid.className = 'grid';
 
       liveItems.forEach(p => {
-        const isCS = false;
         const tile = document.createElement('div');
-        tile.className = 'tile' + (isCS ? ' tile--cs' : '');
+        tile.className = 'tile';
         tile.style.setProperty('--tile-accent', p.accent);
-        if (!isCS) {
-          tile.setAttribute('tabindex', '0');
-          tile.setAttribute('role', 'button');
-          tile.setAttribute('aria-label', `Open ${p.name}`);
-        }
+        tile.setAttribute('tabindex', '0');
+        tile.setAttribute('role', 'button');
+        tile.setAttribute('aria-label', `Open ${p.name}`);
         tile.innerHTML = `
           <div class="tile-icon">${p.icon}</div>
           <div>
@@ -597,20 +594,26 @@
             <p class="tile-tagline">${p.tagline}</p>
           </div>
           <div class="tile-foot">
-            ${isCS
-              ? `<span class="tile-cs-badge">Coming Soon</span>`
-              : `<span class="tile-domain">${p.domains[0].label}</span><span class="tile-arrow">&#8594;</span>`
-            }
+            <span class="tile-domain">${p.domains[0].label}</span><span class="tile-arrow">&#8594;</span>
           </div>
         `;
-        if (!isCS) {
-          tile.addEventListener('click', () => openModal(p));
-          tile.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
-          });
-        }
+        tile.addEventListener('click', () => openModal(p));
+        tile.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
+        });
         grid.appendChild(tile);
       });
+
+      // Fill remaining columns in last row with invisible spacers
+      const cols = 4;
+      const remainder = liveItems.length % cols;
+      if (remainder !== 0) {
+        for (let i = 0; i < cols - remainder; i++) {
+          const spacer = document.createElement('div');
+          spacer.style.background = 'var(--bg)';
+          grid.appendChild(spacer);
+        }
+      }
 
       sectionsEl.appendChild(grid);
     });
